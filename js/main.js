@@ -23,7 +23,7 @@ buttonul.onclick = function(){
 }*/
 
 
-var btn1 = document.getElementById('button1');
+/*var btn1 = document.getElementById('button1');
 var btn2 = document.getElementById('button2');
 var btn3 = document.getElementById('button3');
 var btn4 = document.getElementById('button4');
@@ -91,4 +91,30 @@ rotate.onclick = function(){
 	}else(counter == 360){
 		counter = 0;
 	}
+}*/
+
+var input = document.getElementsByTagName('input');
+
+var name = input[0];
+var forname = input[1];
+var telefon = input[2];
+var email = input[3];
+var button = input[4];
+
+var namePattern = /^[a-z]+$/i;
+var fornamePattern = /^[a-z]+$/i;
+var telefonPattern = /^\d+/ig;
+var emailPattern = /^[a-z-_\.0-9]+@[a-z_-]+\.[a-z]{2,6}$/ig;
+
+button.onclick = function(){
+	n = namePattern.test(name.value);
+	f = fornamePattern.test(forname.value);
+	t = telefonPattern.test(telefon.value);
+	e = emailPattern.test(email.value);
+	
+	if(n && f && t && e){
+		alert('вы ввели все верно');
+	}else{
+		alert('нерно ввели данные');
+	}window.open('new.html','new','width=500px, height=500px,directories=yes,toolbar=yes');
 }

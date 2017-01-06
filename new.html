@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#close{
+			display:none;
+		}
+		#reklama{
+			
+			width:200px;
+			height:200px;
+			background-color: red;
+			margin: 0 auto;
+/*			vertical-align: middle;*/
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="reklama">
+		<a href="javascript:hide()" id="close"><p>закрыть X</p></a>
+	</div>
+	<script>
+		var reklama = document.getElementById('reklama');
+		var close = document.getElementById('close');
+		setTimeout(function(){
+			reklama.style.display = "none";
+		},20000);
+		
+		setTimeout(function(){
+			close.style.display = "block";
+		},5000);
+		
+		function hide(){
+			reklama.style.display = "none";
+		}
+	</script>
+</body>
+</html>
